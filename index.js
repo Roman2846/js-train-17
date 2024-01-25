@@ -8,8 +8,11 @@
  */
 function replaceText(word, replacement, text) {
   // Створення регулярного виразу для пошуку слова з флагом 'g' (глобальний пошук).
+  const regex = new RegExp(word, "g");
   // Використання методу `replace` регулярного виразу для заміни слова на фразу у тексті.
+  const replacedText = text.replace(regex, replacement);
   // Повернення заміненого тексту.
+  return replacedText;
 }
 
 // Перевірка
@@ -33,8 +36,11 @@ console.log(
  */
 function checkWord(word, text) {
   // Створення регулярного виразу для пошуку слова з флагом 'i' (регістронезалежний пошук).
+  const regex = new RegExp(word, "i");
   // Використання методу `test` регулярного виразу для перевірки наявності слова у тексті.
+  const checkdWord = regex.test(text);
   // Повернення результату перевірки.
+  return checkdWord;
 }
 
 // Перевірка
@@ -218,7 +224,9 @@ console.log(checkRegexMethods(/test/msy));
  */
 function findWord(str, word) {
   // Створення регулярного виразу для пошуку слова.
+  const regex = new RegExp(word);
   // Використання методу `search` для пошуку першого входження слова.
+  return str.search(regex);
 }
 
 // Приклад використання:
